@@ -55,11 +55,20 @@ public class List {
     }
 
     public Node returnNode(int index) { // method for getting current node
-        Node node = first;
-        for (int i = 0; i < index; i++) {
-            node = node.next;
+        if (index < size/2) {
+            Node node = first;
+            for (int i = 0; i < index; i++) {
+                node = node.next;
+            }
+            return node;
         }
-        return node;
+        else {
+            Node node = last;
+            for (int i = index; i > 0; i--) {
+                node = node.prev;
+            }
+            return node;
+        }
     }
 
     public void add(Object object, int index) {
@@ -157,5 +166,35 @@ public class List {
     }
 
     public static void main(String[] args) {
+//        List list = new List();
+//        System.out.println(list.isEmpty());
+//        System.out.println(list.contains(1));
+//        for (int i = 0; i < 10; i++) {
+//            list.add(i + 1);
+//            System.out.println(list.get(i));
+//        }
+//        list.add("new 0 object", 0);
+//        System.out.println(list.get(0));
+//        System.out.println(list.get(1));
+//        System.out.println(list.size());
+//        System.out.println(list.isEmpty());
+//        System.out.println(list.contains(1));
+//        System.out.println(list.size);
+//        list.add(11, 11);
+//        System.out.println(list.get(11));
+//        list.add("new fifth object", 5);
+//        System.out.println(list.get(5));
+//        list.set("new third obj", 3);
+//        System.out.println(list.get(3));
+//        System.out.println(list.size);
+//        System.out.println(list.get(1));
+//        System.out.println(list.get(2));
+//        System.out.println(list.get(3));
+//        System.out.println(list.remove(2));
+//        System.out.println(list.get(2));
+//        System.out.println(list.get(3));
+//        System.out.println(list.size());
+//        System.out.println(list.get(1));
+//        System.out.println(list.indexOf(1));
     }
 }

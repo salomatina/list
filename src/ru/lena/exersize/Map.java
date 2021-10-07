@@ -4,7 +4,7 @@ public class Map {
     List list = new List();
 
     public class Record {
-        private Object key;
+        private final Object key;
         private Object value;
 
         public Record(Object key, Object value) {
@@ -46,10 +46,7 @@ public class Map {
 
     public boolean keyContains(Object key) {
         int index = getIndex(key);
-        if (index != -1) {
-            return true;
-        }
-        return false;
+        return index != -1;
     }
 
     public List getValues() {
@@ -103,8 +100,24 @@ public class Map {
         list.remove(index);
         return removedObject;
     }
+    public int size(){
+        return list.size();
+    }
+    public boolean isEmpty(){
+        return list.size() == 0;
+    }
 
-    //public static void main(String[] args) {
-    //}
-
+//    public static void main(String[] args) {
+//    Map map = new Map();
+//    map.put(1,"a");
+//    map.put(2,"b");
+//    System.out.println(map.get(1));
+//    System.out.println(map.get(2));
+//    System.out.println(map.get(0));
+//    map.put(1,"changed first elem");
+//    System.out.println(map.get(1));
+//    map.remove(1);
+//    System.out.println(map.get(1));
+//    System.out.println(map.get(1,"testing getter"));
+//    }
 }
